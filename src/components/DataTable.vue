@@ -216,7 +216,11 @@
           />
         </tbody>
 
-         <tfoot
+        <slot
+          v-if="slots['customize-footers']"
+          name="customize-footers"
+        />
+        <tfoot
           v-else-if="headersForRender.length && !hideHeader"
           class="vue3-easy-data-table__header"
           :class="[headerClassName]"
