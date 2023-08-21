@@ -215,6 +215,75 @@
             }"
           />
         </tbody>
+
+         <tfoot
+          v-else-if="headersForRender.length && !hideHeader"
+          class="vue3-easy-data-table__header"
+          :class="[headerClassName]"
+        >
+          <tr>
+            <th
+              v-for="(header, index) in headersForRender"
+              :key="index"
+              :class="[{
+                sortable: header.sortable,
+                'none': header.sortable && header.sortType === 'none',
+                'desc': header.sortable && header.sortType === 'desc',
+                'asc': header.sortable && header.sortType === 'asc',
+                'shadow': header.value === lastFixedColumn,
+              // eslint-disable-next-line max-len
+              }, typeof headerItemClassName === 'string' ? headerItemClassName : headerItemClassName(header as Header, index + 1)]"
+              :style="getFixedDistance(header.value)"
+              @click.stop="(header.sortable && header.sortType) ? updateSortField(header.value, header.sortType) : null"
+            >
+              <MultipleSelectCheckBox
+                v-if="header.text === 'checkbox'"
+                :key="multipleSelectStatus"
+                :status="multipleSelectStatus"
+                @change="toggleSelectAll"
+              />
+              <span
+                v-else
+                class="header"
+                :class="`direction-${headerTextDirection}`"
+              >
+                <slot
+                  v-if="slots[`header-${header.value}`]"
+                  :name="`header-${header.value}`"
+                  v-bind="header"
+                />
+                <slot
+                  v-else-if="slots[`header-${header.value.toLowerCase()}`]"
+                  :name="`header-${header.value.toLowerCase()}`"
+                  v-bind="header"
+                />
+                <slot
+                  v-else-if="slots['header']"
+                  name="header"
+                  v-bind="header"
+                />   
+                <span
+                  v-else
+                  class="header-text"
+                >
+                  {{ header.text }}
+                </span>
+                <i
+                  v-if="header.sortable"
+                  :key="header.sortType ? header.sortType : 'none'"
+                  class="sortType-icon"
+                  :class="{'desc': header.sortType === 'desc'}"
+                ></i>
+                <span
+                  v-if="multiSort && isMultiSorting(header.value)"
+                  class="multi-sort__number"
+                >
+                  {{ getMultiSortNumber(header.value) }}
+                </span>
+              </span>
+            </th>
+          </tr>
+        </tfoot>
       </table>
       <div
         v-if="loading"
