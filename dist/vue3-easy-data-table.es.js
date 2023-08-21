@@ -1200,7 +1200,7 @@ var propsWithDefault = {
 };
 var DataTable_vue_vue_type_style_index_0_lang = "";
 var DataTable_vue_vue_type_style_index_1_scoped_true_lang = "";
-const _withScopeId = (n) => (pushScopeId("data-v-088b4e8a"), n = n(), popScopeId(), n);
+const _withScopeId = (n) => (pushScopeId("data-v-6e3c351c"), n = n(), popScopeId(), n);
 const _hoisted_1 = ["id"];
 const _hoisted_2 = ["onClick"];
 const _hoisted_3 = {
@@ -1214,34 +1214,35 @@ const _hoisted_4 = {
 const _hoisted_5 = ["onClick", "onDblclick", "onContextmenu"];
 const _hoisted_6 = ["onClick"];
 const _hoisted_7 = ["colspan"];
-const _hoisted_8 = ["onClick"];
-const _hoisted_9 = {
+const _hoisted_8 = { class: "vue3-easy-data-table__header" };
+const _hoisted_9 = ["onClick"];
+const _hoisted_10 = {
   key: 3,
   class: "header-text"
 };
-const _hoisted_10 = {
+const _hoisted_11 = {
   key: 5,
   class: "multi-sort__number"
 };
-const _hoisted_11 = {
+const _hoisted_12 = {
   key: 0,
   class: "vue3-easy-data-table__loading"
 };
-const _hoisted_12 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("div", { class: "vue3-easy-data-table__loading-mask" }, null, -1));
-const _hoisted_13 = { class: "loading-entity" };
-const _hoisted_14 = {
+const _hoisted_13 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("div", { class: "vue3-easy-data-table__loading-mask" }, null, -1));
+const _hoisted_14 = { class: "loading-entity" };
+const _hoisted_15 = {
   key: 1,
   class: "vue3-easy-data-table__message"
 };
-const _hoisted_15 = {
+const _hoisted_16 = {
   key: 0,
   class: "vue3-easy-data-table__footer"
 };
-const _hoisted_16 = {
+const _hoisted_17 = {
   key: 0,
   class: "pagination__rows-per-page"
 };
-const _hoisted_17 = { class: "pagination__items-index" };
+const _hoisted_18 = { class: "pagination__items-index" };
 const _sfc_main = defineComponent({
   __name: "DataTable",
   props: {
@@ -1272,8 +1273,8 @@ const _sfc_main = defineComponent({
   setup(__props, { expose: __expose, emit: emits }) {
     const props = __props;
     useCssVars((_ctx) => ({
-      "47357f15": tableMinHeightPx.value,
-      "46a2acfb": tableHeightPx.value
+      "6fb57bbc": tableMinHeightPx.value,
+      "86bd6c98": tableHeightPx.value
     }));
     const {
       tableNodeId,
@@ -1679,10 +1680,7 @@ const _sfc_main = defineComponent({
                 headers: unref(headersForRender)
               })), void 0, true)
             ], 2)) : createCommentVNode("", true),
-            unref(slots)["customize-headers"] ? renderSlot(_ctx.$slots, "customize-headers", { key: 4 }, void 0, true) : unref(headersForRender).length && !_ctx.hideHeader ? (openBlock(), createElementBlock("tfoot", {
-              key: 5,
-              class: normalizeClass(["vue3-easy-data-table__header", [_ctx.headerClassName]])
-            }, [
+            createElementVNode("tfoot", _hoisted_8, [
               createElementVNode("tr", null, [
                 (openBlock(true), createElementBlock(Fragment, null, renderList(unref(headersForRender), (header, index) => {
                   return openBlock(), createElementBlock("th", {
@@ -1705,32 +1703,32 @@ const _sfc_main = defineComponent({
                       key: 1,
                       class: normalizeClass(["header", `direction-${unref(headerTextDirection)}`])
                     }, [
-                      unref(slots)[`header-${header.value}`] ? renderSlot(_ctx.$slots, `header-${header.value}`, normalizeProps(mergeProps({ key: 0 }, header)), void 0, true) : unref(slots)[`header-${header.value.toLowerCase()}`] ? renderSlot(_ctx.$slots, `header-${header.value.toLowerCase()}`, normalizeProps(mergeProps({ key: 1 }, header)), void 0, true) : unref(slots)["header"] ? renderSlot(_ctx.$slots, "header", normalizeProps(mergeProps({ key: 2 }, header)), void 0, true) : (openBlock(), createElementBlock("span", _hoisted_9, toDisplayString(header.text), 1)),
+                      unref(slots)[`header-${header.value}`] ? renderSlot(_ctx.$slots, `header-${header.value}`, normalizeProps(mergeProps({ key: 0 }, header)), void 0, true) : unref(slots)[`header-${header.value.toLowerCase()}`] ? renderSlot(_ctx.$slots, `header-${header.value.toLowerCase()}`, normalizeProps(mergeProps({ key: 1 }, header)), void 0, true) : unref(slots)["header"] ? renderSlot(_ctx.$slots, "header", normalizeProps(mergeProps({ key: 2 }, header)), void 0, true) : (openBlock(), createElementBlock("span", _hoisted_10, toDisplayString(header.text), 1)),
                       header.sortable ? (openBlock(), createElementBlock("i", {
                         key: header.sortType ? header.sortType : "none",
                         class: normalizeClass(["sortType-icon", { "desc": header.sortType === "desc" }])
                       }, null, 2)) : createCommentVNode("", true),
-                      unref(multiSort) && unref(isMultiSorting)(header.value) ? (openBlock(), createElementBlock("span", _hoisted_10, toDisplayString(unref(getMultiSortNumber)(header.value)), 1)) : createCommentVNode("", true)
+                      unref(multiSort) && unref(isMultiSorting)(header.value) ? (openBlock(), createElementBlock("span", _hoisted_11, toDisplayString(unref(getMultiSortNumber)(header.value)), 1)) : createCommentVNode("", true)
                     ], 2))
-                  ], 14, _hoisted_8);
+                  ], 14, _hoisted_9);
                 }), 128))
               ])
-            ], 2)) : createCommentVNode("", true)
+            ])
           ], 8, _hoisted_1),
-          unref(loading) ? (openBlock(), createElementBlock("div", _hoisted_11, [
-            _hoisted_12,
-            createElementVNode("div", _hoisted_13, [
+          unref(loading) ? (openBlock(), createElementBlock("div", _hoisted_12, [
+            _hoisted_13,
+            createElementVNode("div", _hoisted_14, [
               ifHasLoadingSlot.value ? renderSlot(_ctx.$slots, "loading", { key: 0 }, void 0, true) : (openBlock(), createBlock(Loading, { key: 1 }))
             ])
           ])) : createCommentVNode("", true),
-          !unref(pageItems).length && !unref(loading) ? (openBlock(), createElementBlock("div", _hoisted_14, [
+          !unref(pageItems).length && !unref(loading) ? (openBlock(), createElementBlock("div", _hoisted_15, [
             renderSlot(_ctx.$slots, "empty-message", {}, () => [
               createTextVNode(toDisplayString(_ctx.emptyMessage), 1)
             ], true)
           ])) : createCommentVNode("", true)
         ], 2),
-        !_ctx.hideFooter ? (openBlock(), createElementBlock("div", _hoisted_15, [
-          !_ctx.hideRowsPerPage ? (openBlock(), createElementBlock("div", _hoisted_16, [
+        !_ctx.hideFooter ? (openBlock(), createElementBlock("div", _hoisted_16, [
+          !_ctx.hideRowsPerPage ? (openBlock(), createElementBlock("div", _hoisted_17, [
             createTextVNode(toDisplayString(_ctx.rowsPerPageMessage) + " ", 1),
             createVNode(RowsSelector, {
               modelValue: unref(rowsPerPageRef),
@@ -1738,7 +1736,7 @@ const _sfc_main = defineComponent({
               "rows-items": unref(rowsItemsComputed)
             }, null, 8, ["modelValue", "rows-items"])
           ])) : createCommentVNode("", true),
-          createElementVNode("div", _hoisted_17, toDisplayString(`${unref(currentPageFirstIndex)}\u2013${unref(currentPageLastIndex)}`) + " " + toDisplayString(unref(rowsOfPageSeparatorMessage)) + " " + toDisplayString(unref(totalItemsLength)), 1),
+          createElementVNode("div", _hoisted_18, toDisplayString(`${unref(currentPageFirstIndex)}\u2013${unref(currentPageLastIndex)}`) + " " + toDisplayString(unref(rowsOfPageSeparatorMessage)) + " " + toDisplayString(unref(totalItemsLength)), 1),
           ifHasPaginationSlot.value ? renderSlot(_ctx.$slots, "pagination", normalizeProps(mergeProps({ key: 1 }, {
             isFirstPage: unref(isFirstPage),
             isLastPage: unref(isLastPage),
@@ -1770,7 +1768,7 @@ const _sfc_main = defineComponent({
     };
   }
 });
-var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-088b4e8a"]]);
+var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-6e3c351c"]]);
 if (typeof window !== "undefined" && window.Vue) {
   window.Vue.createApp({}).component("Vue3EasyDataTable", DataTable);
 }

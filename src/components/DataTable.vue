@@ -24,6 +24,7 @@
             :style="getColStyle(header)"
           />
         </colgroup>
+
         <slot
           v-if="slots['customize-headers']"
           name="customize-headers"
@@ -96,6 +97,7 @@
             </th>
           </tr>
         </thead>
+        
         <slot
           v-if="ifHasBodySlot"
           name="body"
@@ -215,15 +217,9 @@
             }"
           />
         </tbody>
-
-        <slot
-          v-if="slots['customize-headers']"
-          name="customize-headers"
-        />
+        
         <tfoot
-          v-else-if="headersForRender.length && !hideHeader"
           class="vue3-easy-data-table__header"
-          :class="[headerClassName]"
         >
           <tr>
             <th
@@ -288,6 +284,7 @@
             </th>
           </tr>
         </tfoot>
+
       </table>
       <div
         v-if="loading"
