@@ -217,8 +217,8 @@
         </tbody>
 
         <slot
-          v-if="slots['customize-footers']"
-          name="customize-footers"
+          v-if="slots['customize-headers']"
+          name="customize-headers"
         />
         <tfoot
           v-else-if="headersForRender.length && !hideHeader"

@@ -1200,7 +1200,7 @@ var propsWithDefault = {
 };
 var DataTable_vue_vue_type_style_index_0_lang = "";
 var DataTable_vue_vue_type_style_index_1_scoped_true_lang = "";
-const _withScopeId = (n) => (pushScopeId("data-v-2e414f4a"), n = n(), popScopeId(), n);
+const _withScopeId = (n) => (pushScopeId("data-v-088b4e8a"), n = n(), popScopeId(), n);
 const _hoisted_1 = ["id"];
 const _hoisted_2 = ["onClick"];
 const _hoisted_3 = {
@@ -1272,8 +1272,8 @@ const _sfc_main = defineComponent({
   setup(__props, { expose: __expose, emit: emits }) {
     const props = __props;
     useCssVars((_ctx) => ({
-      "fc150350": tableMinHeightPx.value,
-      "8a54a6d0": tableHeightPx.value
+      "47357f15": tableMinHeightPx.value,
+      "46a2acfb": tableHeightPx.value
     }));
     const {
       tableNodeId,
@@ -1679,7 +1679,7 @@ const _sfc_main = defineComponent({
                 headers: unref(headersForRender)
               })), void 0, true)
             ], 2)) : createCommentVNode("", true),
-            unref(slots)["customize-footers"] ? renderSlot(_ctx.$slots, "customize-footers", { key: 4 }, void 0, true) : unref(headersForRender).length && !_ctx.hideHeader ? (openBlock(), createElementBlock("tfoot", {
+            unref(slots)["customize-headers"] ? renderSlot(_ctx.$slots, "customize-headers", { key: 4 }, void 0, true) : unref(headersForRender).length && !_ctx.hideHeader ? (openBlock(), createElementBlock("tfoot", {
               key: 5,
               class: normalizeClass(["vue3-easy-data-table__header", [_ctx.headerClassName]])
             }, [
@@ -1770,7 +1770,7 @@ const _sfc_main = defineComponent({
     };
   }
 });
-var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-2e414f4a"]]);
+var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-088b4e8a"]]);
 if (typeof window !== "undefined" && window.Vue) {
   window.Vue.createApp({}).component("Vue3EasyDataTable", DataTable);
 }
