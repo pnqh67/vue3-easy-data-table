@@ -1200,7 +1200,7 @@ var propsWithDefault = {
 };
 var DataTable_vue_vue_type_style_index_0_lang = "";
 var DataTable_vue_vue_type_style_index_1_scoped_true_lang = "";
-const _withScopeId = (n) => (pushScopeId("data-v-6e3c351c"), n = n(), popScopeId(), n);
+const _withScopeId = (n) => (pushScopeId("data-v-3062daa2"), n = n(), popScopeId(), n);
 const _hoisted_1 = ["id"];
 const _hoisted_2 = ["onClick"];
 const _hoisted_3 = {
@@ -1273,8 +1273,8 @@ const _sfc_main = defineComponent({
   setup(__props, { expose: __expose, emit: emits }) {
     const props = __props;
     useCssVars((_ctx) => ({
-      "6fb57bbc": tableMinHeightPx.value,
-      "86bd6c98": tableHeightPx.value
+      "63d003d0": tableMinHeightPx.value,
+      "3eadda20": tableHeightPx.value
     }));
     const {
       tableNodeId,
@@ -1607,6 +1607,7 @@ const _sfc_main = defineComponent({
               })), void 0, true),
               (openBlock(true), createElementBlock(Fragment, null, renderList(unref(pageItems), (item, index) => {
                 return openBlock(), createElementBlock(Fragment, { key: index }, [
+                  createTextVNode(toDisplayString(unref(headerColumns)) + " ", 1),
                   createElementVNode("tr", {
                     class: normalizeClass([
                       { "even-row": (index + 1) % 2 === 0 },
@@ -1768,7 +1769,7 @@ const _sfc_main = defineComponent({
     };
   }
 });
-var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-6e3c351c"]]);
+var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-3062daa2"]]);
 if (typeof window !== "undefined" && window.Vue) {
   window.Vue.createApp({}).component("Vue3EasyDataTable", DataTable);
 }

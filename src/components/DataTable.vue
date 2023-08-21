@@ -127,6 +127,7 @@
             v-for="(item, index) in pageItems"
             :key="index"
           >
+          {{headerColumns}}
             <tr
               :class="[{'even-row': (index + 1) % 2 === 0},
                        typeof bodyRowClassName === 'string' ? bodyRowClassName : bodyRowClassName(item, index + 1)]"
