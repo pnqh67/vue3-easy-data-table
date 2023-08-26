@@ -1200,7 +1200,7 @@ var propsWithDefault = {
 };
 var DataTable_vue_vue_type_style_index_0_lang = "";
 var DataTable_vue_vue_type_style_index_1_scoped_true_lang = "";
-const _withScopeId = (n) => (pushScopeId("data-v-3062daa2"), n = n(), popScopeId(), n);
+const _withScopeId = (n) => (pushScopeId("data-v-15dabf3e"), n = n(), popScopeId(), n);
 const _hoisted_1 = ["id"];
 const _hoisted_2 = ["onClick"];
 const _hoisted_3 = {
@@ -1214,7 +1214,10 @@ const _hoisted_4 = {
 const _hoisted_5 = ["onClick", "onDblclick", "onContextmenu"];
 const _hoisted_6 = ["onClick"];
 const _hoisted_7 = ["colspan"];
-const _hoisted_8 = { class: "vue3-easy-data-table__header" };
+const _hoisted_8 = {
+  key: 4,
+  class: "vue3-easy-data-table__header"
+};
 const _hoisted_9 = ["onClick"];
 const _hoisted_10 = {
   key: 3,
@@ -1273,8 +1276,8 @@ const _sfc_main = defineComponent({
   setup(__props, { expose: __expose, emit: emits }) {
     const props = __props;
     useCssVars((_ctx) => ({
-      "63d003d0": tableMinHeightPx.value,
-      "3eadda20": tableHeightPx.value
+      "4f925440": tableMinHeightPx.value,
+      "5752dfb0": tableHeightPx.value
     }));
     const {
       tableNodeId,
@@ -1607,7 +1610,6 @@ const _sfc_main = defineComponent({
               })), void 0, true),
               (openBlock(true), createElementBlock(Fragment, null, renderList(unref(pageItems), (item, index) => {
                 return openBlock(), createElementBlock(Fragment, { key: index }, [
-                  createTextVNode(toDisplayString(unref(headerColumns)) + " ", 1),
                   createElementVNode("tr", {
                     class: normalizeClass([
                       { "even-row": (index + 1) % 2 === 0 },
@@ -1681,7 +1683,7 @@ const _sfc_main = defineComponent({
                 headers: unref(headersForRender)
               })), void 0, true)
             ], 2)) : createCommentVNode("", true),
-            createElementVNode("tfoot", _hoisted_8, [
+            unref(loading) || unref(pageItems).length ? (openBlock(), createElementBlock("tfoot", _hoisted_8, [
               createElementVNode("tr", null, [
                 (openBlock(true), createElementBlock(Fragment, null, renderList(unref(headersForRender), (header, index) => {
                   return openBlock(), createElementBlock("th", {
@@ -1714,7 +1716,7 @@ const _sfc_main = defineComponent({
                   ], 14, _hoisted_9);
                 }), 128))
               ])
-            ])
+            ])) : createCommentVNode("", true)
           ], 8, _hoisted_1),
           unref(loading) ? (openBlock(), createElementBlock("div", _hoisted_12, [
             _hoisted_13,
@@ -1769,7 +1771,7 @@ const _sfc_main = defineComponent({
     };
   }
 });
-var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-3062daa2"]]);
+var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-15dabf3e"]]);
 if (typeof window !== "undefined" && window.Vue) {
   window.Vue.createApp({}).component("Vue3EasyDataTable", DataTable);
 }

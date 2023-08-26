@@ -127,7 +127,6 @@
             v-for="(item, index) in pageItems"
             :key="index"
           >
-          {{headerColumns}}
             <tr
               :class="[{'even-row': (index + 1) % 2 === 0},
                        typeof bodyRowClassName === 'string' ? bodyRowClassName : bodyRowClassName(item, index + 1)]"
@@ -220,6 +219,7 @@
         </tbody>
         
         <tfoot
+          v-if="loading || pageItems.length"
           class="vue3-easy-data-table__header"
         >
           <tr>
