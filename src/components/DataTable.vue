@@ -141,13 +141,14 @@
                 v-for="(column, i) in headerColumns"
                 :key="i"
                 :style="getFixedDistance(column, 'td')"
+                :data-colname="getColname(column)"
                 :class="[{
                   'shadow': column === lastFixedColumn,
                   'can-expand': column === 'expand',
                 // eslint-disable-next-line max-len
                 }, typeof bodyItemClassName === 'string' ? bodyItemClassName : bodyItemClassName(column, index + 1), `direction-${bodyTextDirection}`]"
                 @click="column === 'expand' ? updateExpandingItemIndexList(index + prevPageEndIndex, item, $event) : null"
-              > 
+              >
                 <slot
                   v-if="slots[`item-${column}`]"
                   :name="`item-${column}`"
@@ -219,7 +220,7 @@
         </tbody>
         
         <tfoot
-          v-if="loading || pageItems.length"
+          v-if="!loading && pageItems.length"
           class="vue3-easy-data-table__header"
         >
           <tr>
@@ -645,6 +646,11 @@ const getFixedDistance = (column: string, type: 'td' | 'th' = 'th') => {
     return `left: ${columInfo.distance}px;z-index: ${type === 'th' ? 3 : 1};position: sticky;`;
   }
   return undefined;
+};
+
+const getColname = (column: string) => {
+  const colItem = headersForRender.value.find((info) => info.value === column)
+  return colItem?.text
 };
 
 watch(loading, (newVal, oldVal) => {
