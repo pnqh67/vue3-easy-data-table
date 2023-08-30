@@ -1200,7 +1200,7 @@ var propsWithDefault = {
 };
 var DataTable_vue_vue_type_style_index_0_lang = "";
 var DataTable_vue_vue_type_style_index_1_scoped_true_lang = "";
-const _withScopeId = (n) => (pushScopeId("data-v-ae9a1742"), n = n(), popScopeId(), n);
+const _withScopeId = (n) => (pushScopeId("data-v-5d28e6e7"), n = n(), popScopeId(), n);
 const _hoisted_1 = ["id"];
 const _hoisted_2 = ["onClick"];
 const _hoisted_3 = {
@@ -1214,10 +1214,7 @@ const _hoisted_4 = {
 const _hoisted_5 = ["onClick", "onDblclick", "onContextmenu"];
 const _hoisted_6 = ["data-colname", "onClick"];
 const _hoisted_7 = ["colspan"];
-const _hoisted_8 = {
-  key: 4,
-  class: "vue3-easy-data-table__header"
-};
+const _hoisted_8 = { key: 4 };
 const _hoisted_9 = ["onClick"];
 const _hoisted_10 = {
   key: 3,
@@ -1227,20 +1224,11 @@ const _hoisted_11 = {
   key: 5,
   class: "multi-sort__number"
 };
-const _hoisted_12 = {
-  key: 0,
-  class: "vue3-easy-data-table__loading"
-};
-const _hoisted_13 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("div", { class: "vue3-easy-data-table__loading-mask" }, null, -1));
+const _hoisted_12 = { key: 0 };
+const _hoisted_13 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("div", null, null, -1));
 const _hoisted_14 = { class: "loading-entity" };
-const _hoisted_15 = {
-  key: 1,
-  class: "vue3-easy-data-table__message"
-};
-const _hoisted_16 = {
-  key: 0,
-  class: "vue3-easy-data-table__footer"
-};
+const _hoisted_15 = { key: 1 };
+const _hoisted_16 = { key: 0 };
 const _hoisted_17 = {
   key: 0,
   class: "pagination__rows-per-page"
@@ -1276,8 +1264,8 @@ const _sfc_main = defineComponent({
   setup(__props, { expose: __expose, emit: emits }) {
     const props = __props;
     useCssVars((_ctx) => ({
-      "7b2c2ed9": tableMinHeightPx.value,
-      "171bb3b7": tableHeightPx.value
+      "bdfd3a7e": tableMinHeightPx.value,
+      "076d48cf": tableHeightPx.value
     }));
     const {
       tableNodeId,
@@ -1488,6 +1476,10 @@ const _sfc_main = defineComponent({
       const colItem = headersForRender.value.find((info) => info.value === column);
       return colItem == null ? void 0 : colItem.text;
     };
+    const getClassname = (column) => {
+      const colItem = headersForRender.value.find((info) => info.value === column);
+      return colItem == null ? void 0 : colItem.class;
+    };
     watch(loading, (newVal, oldVal) => {
       if (serverOptionsComputed.value) {
         if (newVal === false && oldVal === true) {
@@ -1536,19 +1528,19 @@ const _sfc_main = defineComponent({
       return openBlock(), createElementBlock("div", {
         ref_key: "dataTable",
         ref: dataTable,
-        class: normalizeClass(["vue3-easy-data-table", [_ctx.tableClassName]])
+        class: normalizeClass([_ctx.tableClassName])
       }, [
         createElementVNode("div", {
           ref_key: "tableBody",
           ref: tableBody,
-          class: normalizeClass(["vue3-easy-data-table__main", {
+          class: normalizeClass({
             "fixed-header": unref(fixedHeader),
             "fixed-height": unref(tableHeight),
             "show-shadow": showShadow.value,
             "table-fixed": unref(fixedHeaders).length,
             "hoverable": !_ctx.noHover,
             "border-cell": _ctx.borderCell
-          }])
+          })
         }, [
           createElementVNode("table", { id: unref(tableNodeId) }, [
             createElementVNode("colgroup", null, [
@@ -1561,7 +1553,7 @@ const _sfc_main = defineComponent({
             ]),
             unref(slots)["customize-headers"] ? renderSlot(_ctx.$slots, "customize-headers", { key: 0 }, void 0, true) : unref(headersForRender).length && !_ctx.hideHeader ? (openBlock(), createElementBlock("thead", {
               key: 1,
-              class: normalizeClass(["vue3-easy-data-table__header", [_ctx.headerClassName]])
+              class: normalizeClass([_ctx.headerClassName])
             }, [
               createElementVNode("tr", null, [
                 (openBlock(true), createElementBlock(Fragment, null, renderList(unref(headersForRender), (header, index) => {
@@ -1598,7 +1590,7 @@ const _sfc_main = defineComponent({
             ], 2)) : createCommentVNode("", true),
             ifHasBodySlot.value ? renderSlot(_ctx.$slots, "body", normalizeProps(mergeProps({ key: 2 }, unref(pageItems))), void 0, true) : unref(headerColumns).length ? (openBlock(), createElementBlock("tbody", {
               key: 3,
-              class: normalizeClass(["vue3-easy-data-table__body", { "row-alternation": _ctx.alternating }])
+              class: normalizeClass({ "row-alternation": _ctx.alternating })
             }, [
               renderSlot(_ctx.$slots, "body-prepend", normalizeProps(guardReactiveProps({
                 items: unref(pageItems),
@@ -1638,7 +1630,7 @@ const _sfc_main = defineComponent({
                         class: normalizeClass([{
                           "shadow": column === unref(lastFixedColumn),
                           "can-expand": column === "expand"
-                        }, typeof _ctx.bodyItemClassName === "string" ? _ctx.bodyItemClassName : _ctx.bodyItemClassName(column, index + 1), `direction-${unref(bodyTextDirection)}`]),
+                        }, typeof _ctx.bodyItemClassName === "string" ? _ctx.bodyItemClassName : _ctx.bodyItemClassName(column, index + 1), getClassname(column)]),
                         onClick: ($event) => column === "expand" ? unref(updateExpandingItemIndexList)(index + prevPageEndIndex.value, item, $event) : null
                       }, [
                         unref(slots)[`item-${column}`] ? renderSlot(_ctx.$slots, `item-${column}`, normalizeProps(mergeProps({ key: 0 }, item)), void 0, true) : unref(slots)[`item-${column.toLowerCase()}`] ? renderSlot(_ctx.$slots, `item-${column.toLowerCase()}`, normalizeProps(mergeProps({ key: 1 }, item)), void 0, true) : column === "expand" ? (openBlock(), createElementBlock("i", {
@@ -1776,7 +1768,7 @@ const _sfc_main = defineComponent({
     };
   }
 });
-var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-ae9a1742"]]);
+var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-5d28e6e7"]]);
 if (typeof window !== "undefined" && window.Vue) {
   window.Vue.createApp({}).component("Vue3EasyDataTable", DataTable);
 }

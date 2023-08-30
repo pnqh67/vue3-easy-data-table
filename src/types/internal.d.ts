@@ -10,6 +10,7 @@ export type ServerOptionsComputed = {
 export type HeaderForRender = {
   text: string,
   value: string,
+  class: string,
   sortable?: boolean,
   sortType?: SortType | 'none',
   fixed?: Boolean,

@@ -1,12 +1,10 @@
 <template>
   <div
     ref="dataTable"
-    class="vue3-easy-data-table"
     :class="[tableClassName]"
   >
     <div
       ref="tableBody"
-      class="vue3-easy-data-table__main"
       :class="{
         'fixed-header': fixedHeader,
         'fixed-height': tableHeight,
@@ -31,7 +29,6 @@
         />
         <thead
           v-else-if="headersForRender.length && !hideHeader"
-          class="vue3-easy-data-table__header"
           :class="[headerClassName]"
         >
           <tr>
@@ -105,7 +102,6 @@
         />
         <tbody
           v-else-if="headerColumns.length"
-          class="vue3-easy-data-table__body"
           :class="{'row-alternation': alternating}"
         >
           <slot
@@ -146,7 +142,7 @@
                   'shadow': column === lastFixedColumn,
                   'can-expand': column === 'expand',
                 // eslint-disable-next-line max-len
-                }, typeof bodyItemClassName === 'string' ? bodyItemClassName : bodyItemClassName(column, index + 1), `direction-${bodyTextDirection}`]"
+                }, typeof bodyItemClassName === 'string' ? bodyItemClassName : bodyItemClassName(column, index + 1), getClassname(column)]"
                 @click="column === 'expand' ? updateExpandingItemIndexList(index + prevPageEndIndex, item, $event) : null"
               >
                 <slot
@@ -221,7 +217,6 @@
         
         <tfoot
           v-if="!loading && pageItems.length"
-          class="vue3-easy-data-table__header"
         >
           <tr>
             <th
@@ -290,11 +285,8 @@
       </table>
       <div
         v-if="loading"
-        class="vue3-easy-data-table__loading"
       >
-        <div
-          class="vue3-easy-data-table__loading-mask "
-        ></div>
+        <div></div>
         <div class="loading-entity">
           <slot
             v-if="ifHasLoadingSlot"
@@ -306,7 +298,6 @@
 
       <div
         v-if="!pageItems.length && !loading"
-        class="vue3-easy-data-table__message"
       >
         <slot name="empty-message">
           {{ emptyMessage }}
@@ -315,7 +306,6 @@
     </div>
     <div
       v-if="!hideFooter"
-      class="vue3-easy-data-table__footer"
     >
       <div
         v-if="!hideRowsPerPage"
@@ -651,6 +641,11 @@ const getFixedDistance = (column: string, type: 'td' | 'th' = 'th') => {
 const getColname = (column: string) => {
   const colItem = headersForRender.value.find((info) => info.value === column)
   return colItem?.text
+};
+
+const getClassname = (column: any) => {
+  const colItem = headersForRender.value.find((info) => info.value === column)
+  return colItem?.class
 };
 
 watch(loading, (newVal, oldVal) => {
