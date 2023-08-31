@@ -59,10 +59,10 @@ var _export_sfc = (sfc, props) => {
   }
   return target;
 };
-const _withScopeId$3 = (n) => (pushScopeId("data-v-4ca5de3a"), n = n(), popScopeId(), n);
+const _withScopeId$2 = (n) => (pushScopeId("data-v-4ca5de3a"), n = n(), popScopeId(), n);
 const _hoisted_1$5 = { class: "easy-data-table__rows-selector" };
 const _hoisted_2$4 = { class: "rows-input" };
-const _hoisted_3$3 = /* @__PURE__ */ _withScopeId$3(() => /* @__PURE__ */ createElementVNode("div", { class: "triangle" }, null, -1));
+const _hoisted_3$3 = /* @__PURE__ */ _withScopeId$2(() => /* @__PURE__ */ createElementVNode("div", { class: "triangle" }, null, -1));
 const _hoisted_4$3 = ["onClick"];
 const _sfc_main$5 = defineComponent({
   __name: "RowsSelector",
@@ -148,12 +148,12 @@ const _sfc_main$5 = defineComponent({
 });
 var RowsSelector = /* @__PURE__ */ _export_sfc(_sfc_main$5, [["__scopeId", "data-v-4ca5de3a"]]);
 var Loading_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _withScopeId$2 = (n) => (pushScopeId("data-v-1fa3a520"), n = n(), popScopeId(), n);
+const _withScopeId$1 = (n) => (pushScopeId("data-v-1fa3a520"), n = n(), popScopeId(), n);
 const _hoisted_1$4 = { class: "lds-ring" };
-const _hoisted_2$3 = /* @__PURE__ */ _withScopeId$2(() => /* @__PURE__ */ createElementVNode("div", null, null, -1));
-const _hoisted_3$2 = /* @__PURE__ */ _withScopeId$2(() => /* @__PURE__ */ createElementVNode("div", null, null, -1));
-const _hoisted_4$2 = /* @__PURE__ */ _withScopeId$2(() => /* @__PURE__ */ createElementVNode("div", null, null, -1));
-const _hoisted_5$1 = /* @__PURE__ */ _withScopeId$2(() => /* @__PURE__ */ createElementVNode("div", null, null, -1));
+const _hoisted_2$3 = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ createElementVNode("div", null, null, -1));
+const _hoisted_3$2 = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ createElementVNode("div", null, null, -1));
+const _hoisted_4$2 = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ createElementVNode("div", null, null, -1));
+const _hoisted_5$1 = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ createElementVNode("div", null, null, -1));
 const _hoisted_6$1 = [
   _hoisted_2$3,
   _hoisted_3$2,
@@ -342,12 +342,12 @@ const _sfc_main$2 = defineComponent({
 });
 var ButtonsPagination = /* @__PURE__ */ _export_sfc(_sfc_main$2, [["__scopeId", "data-v-4c681fa2"]]);
 var PaginationArrows_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _withScopeId$1 = (n) => (pushScopeId("data-v-c9da5286"), n = n(), popScopeId(), n);
-const _hoisted_1$1 = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ createElementVNode("span", { class: "arrow arrow-right" }, null, -1));
+const _withScopeId = (n) => (pushScopeId("data-v-c9da5286"), n = n(), popScopeId(), n);
+const _hoisted_1$1 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("span", { class: "arrow arrow-right" }, null, -1));
 const _hoisted_2$1 = [
   _hoisted_1$1
 ];
-const _hoisted_3$1 = /* @__PURE__ */ _withScopeId$1(() => /* @__PURE__ */ createElementVNode("span", { class: "arrow arrow-left" }, null, -1));
+const _hoisted_3$1 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("span", { class: "arrow arrow-left" }, null, -1));
 const _hoisted_4$1 = [
   _hoisted_3$1
 ];
@@ -1184,8 +1184,7 @@ var propsWithDefault = {
   }
 };
 var DataTable_vue_vue_type_style_index_0_lang = "";
-var DataTable_vue_vue_type_style_index_1_scoped_true_lang = "";
-const _withScopeId = (n) => (pushScopeId("data-v-1485792e"), n = n(), popScopeId(), n);
+var DataTable_vue_vue_type_style_index_1_lang = "";
 const _hoisted_1 = ["id"];
 const _hoisted_2 = ["onClick"];
 const _hoisted_3 = {
@@ -1210,9 +1209,12 @@ const _hoisted_11 = {
   class: "multi-sort__number"
 };
 const _hoisted_12 = { key: 0 };
-const _hoisted_13 = /* @__PURE__ */ _withScopeId(() => /* @__PURE__ */ createElementVNode("div", null, null, -1));
+const _hoisted_13 = /* @__PURE__ */ createElementVNode("div", null, null, -1);
 const _hoisted_14 = { class: "loading-entity" };
-const _hoisted_15 = { key: 1 };
+const _hoisted_15 = {
+  key: 1,
+  class: "empty-message"
+};
 const _hoisted_16 = { key: 0 };
 const _hoisted_17 = {
   key: 0,
@@ -1248,10 +1250,6 @@ const _sfc_main = defineComponent({
   ],
   setup(__props, { expose: __expose, emit: emits }) {
     const props = __props;
-    useCssVars((_ctx) => ({
-      "2f333b04": tableMinHeightPx.value,
-      "7f64ab9c": tableHeightPx.value
-    }));
     const {
       tableNodeId,
       clickEventType,
@@ -1288,8 +1286,8 @@ const _sfc_main = defineComponent({
       showIndexSymbol,
       preventContextMenuRow
     } = toRefs(props);
-    const tableHeightPx = computed(() => tableHeight.value ? `${tableHeight.value}px` : null);
-    const tableMinHeightPx = computed(() => `${tableMinHeight.value}px`);
+    computed(() => tableHeight.value ? `${tableHeight.value}px` : null);
+    computed(() => `${tableMinHeight.value}px`);
     provide("themeColor", themeColor.value);
     const slots = useSlots();
     const ifHasPaginationSlot = computed(() => !!slots.pagination);
@@ -1539,7 +1537,7 @@ const _sfc_main = defineComponent({
                 }, null, 4);
               }), 128))
             ]),
-            unref(slots)["customize-headers"] ? renderSlot(_ctx.$slots, "customize-headers", { key: 0 }, void 0, true) : unref(headersForRender).length && !_ctx.hideHeader ? (openBlock(), createElementBlock("thead", {
+            unref(slots)["customize-headers"] ? renderSlot(_ctx.$slots, "customize-headers", { key: 0 }) : unref(headersForRender).length && !_ctx.hideHeader ? (openBlock(), createElementBlock("thead", {
               key: 1,
               class: normalizeClass([_ctx.headerClassName])
             }, [
@@ -1565,7 +1563,7 @@ const _sfc_main = defineComponent({
                       key: 1,
                       class: normalizeClass(["header", `direction-${unref(headerTextDirection)}`])
                     }, [
-                      unref(slots)[`header-${header.value}`] ? renderSlot(_ctx.$slots, `header-${header.value}`, normalizeProps(mergeProps({ key: 0 }, header)), void 0, true) : unref(slots)[`header-${header.value.toLowerCase()}`] ? renderSlot(_ctx.$slots, `header-${header.value.toLowerCase()}`, normalizeProps(mergeProps({ key: 1 }, header)), void 0, true) : unref(slots)["header"] ? renderSlot(_ctx.$slots, "header", normalizeProps(mergeProps({ key: 2 }, header)), void 0, true) : (openBlock(), createElementBlock("span", _hoisted_3, toDisplayString(header.text), 1)),
+                      unref(slots)[`header-${header.value}`] ? renderSlot(_ctx.$slots, `header-${header.value}`, normalizeProps(mergeProps({ key: 0 }, header))) : unref(slots)[`header-${header.value.toLowerCase()}`] ? renderSlot(_ctx.$slots, `header-${header.value.toLowerCase()}`, normalizeProps(mergeProps({ key: 1 }, header))) : unref(slots)["header"] ? renderSlot(_ctx.$slots, "header", normalizeProps(mergeProps({ key: 2 }, header))) : (openBlock(), createElementBlock("span", _hoisted_3, toDisplayString(header.text), 1)),
                       header.sortable ? (openBlock(), createElementBlock("i", {
                         key: header.sortType ? header.sortType : "none",
                         class: normalizeClass(["sortType-icon", { "desc": header.sortType === "desc" }])
@@ -1576,7 +1574,7 @@ const _sfc_main = defineComponent({
                 }), 128))
               ])
             ], 2)) : createCommentVNode("", true),
-            ifHasBodySlot.value ? renderSlot(_ctx.$slots, "body", normalizeProps(mergeProps({ key: 2 }, unref(pageItems))), void 0, true) : unref(headerColumns).length ? (openBlock(), createElementBlock("tbody", {
+            ifHasBodySlot.value ? renderSlot(_ctx.$slots, "body", normalizeProps(mergeProps({ key: 2 }, unref(pageItems)))) : unref(headerColumns).length ? (openBlock(), createElementBlock("tbody", {
               key: 3,
               class: normalizeClass({ "row-alternation": _ctx.alternating })
             }, [
@@ -1591,7 +1589,7 @@ const _sfc_main = defineComponent({
                   prevPage: unref(prevPage)
                 },
                 headers: unref(headersForRender)
-              })), void 0, true),
+              }))),
               (openBlock(true), createElementBlock(Fragment, null, renderList(unref(pageItems), (item, index) => {
                 return openBlock(), createElementBlock(Fragment, { key: index }, [
                   createElementVNode("tr", {
@@ -1622,14 +1620,14 @@ const _sfc_main = defineComponent({
                         }, typeof _ctx.bodyItemClassName === "string" ? _ctx.bodyItemClassName : _ctx.bodyItemClassName(column, index + 1), getClassname(column)]),
                         onClick: ($event) => column === "expand" ? unref(updateExpandingItemIndexList)(index + prevPageEndIndex.value, item, $event) : null
                       }, [
-                        unref(slots)[`item-${column}`] ? renderSlot(_ctx.$slots, `item-${column}`, normalizeProps(mergeProps({ key: 0 }, item)), void 0, true) : unref(slots)[`item-${column.toLowerCase()}`] ? renderSlot(_ctx.$slots, `item-${column.toLowerCase()}`, normalizeProps(mergeProps({ key: 1 }, item)), void 0, true) : column === "expand" ? (openBlock(), createElementBlock("i", {
+                        unref(slots)[`item-${column}`] ? renderSlot(_ctx.$slots, `item-${column}`, normalizeProps(mergeProps({ key: 0 }, item))) : unref(slots)[`item-${column.toLowerCase()}`] ? renderSlot(_ctx.$slots, `item-${column.toLowerCase()}`, normalizeProps(mergeProps({ key: 1 }, item))) : column === "expand" ? (openBlock(), createElementBlock("i", {
                           key: 2,
                           class: normalizeClass(["expand-icon", { "expanding": unref(expandingItemIndexList).includes(prevPageEndIndex.value + index) }])
                         }, null, 2)) : column === "checkbox" ? (openBlock(), createBlock(_sfc_main$6, {
                           key: 3,
                           checked: item[column],
                           onChange: ($event) => unref(toggleSelectItem)(item)
-                        }, null, 8, ["checked", "onChange"])) : unref(slots)["item"] ? renderSlot(_ctx.$slots, "item", normalizeProps(mergeProps({ key: 4 }, { column, item })), void 0, true) : (openBlock(), createElementBlock(Fragment, { key: 5 }, [
+                        }, null, 8, ["checked", "onChange"])) : unref(slots)["item"] ? renderSlot(_ctx.$slots, "item", normalizeProps(mergeProps({ key: 4 }, { column, item }))) : (openBlock(), createElementBlock(Fragment, { key: 5 }, [
                           createTextVNode(toDisplayString(unref(generateColumnContent)(column, item)), 1)
                         ], 64))
                       ], 14, _hoisted_6);
@@ -1650,7 +1648,7 @@ const _sfc_main = defineComponent({
                         key: 0,
                         class: "expand-loading"
                       })) : createCommentVNode("", true),
-                      renderSlot(_ctx.$slots, "expand", normalizeProps(guardReactiveProps(item)), void 0, true)
+                      renderSlot(_ctx.$slots, "expand", normalizeProps(guardReactiveProps(item)))
                     ], 8, _hoisted_7)
                   ], 2)) : createCommentVNode("", true)
                 ], 64);
@@ -1667,7 +1665,7 @@ const _sfc_main = defineComponent({
                   updatePage: unref(updatePage)
                 },
                 headers: unref(headersForRender)
-              })), void 0, true)
+              })))
             ], 2)) : createCommentVNode("", true),
             !unref(loading) && unref(pageItems).length ? (openBlock(), createElementBlock("tfoot", _hoisted_8, [
               createElementVNode("tr", null, [
@@ -1692,7 +1690,7 @@ const _sfc_main = defineComponent({
                       key: 1,
                       class: normalizeClass(["header", `direction-${unref(headerTextDirection)}`])
                     }, [
-                      unref(slots)[`header-${header.value}`] ? renderSlot(_ctx.$slots, `header-${header.value}`, normalizeProps(mergeProps({ key: 0 }, header)), void 0, true) : unref(slots)[`header-${header.value.toLowerCase()}`] ? renderSlot(_ctx.$slots, `header-${header.value.toLowerCase()}`, normalizeProps(mergeProps({ key: 1 }, header)), void 0, true) : unref(slots)["header"] ? renderSlot(_ctx.$slots, "header", normalizeProps(mergeProps({ key: 2 }, header)), void 0, true) : (openBlock(), createElementBlock("span", _hoisted_10, toDisplayString(header.text), 1)),
+                      unref(slots)[`header-${header.value}`] ? renderSlot(_ctx.$slots, `header-${header.value}`, normalizeProps(mergeProps({ key: 0 }, header))) : unref(slots)[`header-${header.value.toLowerCase()}`] ? renderSlot(_ctx.$slots, `header-${header.value.toLowerCase()}`, normalizeProps(mergeProps({ key: 1 }, header))) : unref(slots)["header"] ? renderSlot(_ctx.$slots, "header", normalizeProps(mergeProps({ key: 2 }, header))) : (openBlock(), createElementBlock("span", _hoisted_10, toDisplayString(header.text), 1)),
                       header.sortable ? (openBlock(), createElementBlock("i", {
                         key: header.sortType ? header.sortType : "none",
                         class: normalizeClass(["sortType-icon", { "desc": header.sortType === "desc" }])
@@ -1707,13 +1705,13 @@ const _sfc_main = defineComponent({
           unref(loading) ? (openBlock(), createElementBlock("div", _hoisted_12, [
             _hoisted_13,
             createElementVNode("div", _hoisted_14, [
-              ifHasLoadingSlot.value ? renderSlot(_ctx.$slots, "loading", { key: 0 }, void 0, true) : (openBlock(), createBlock(Loading, { key: 1 }))
+              ifHasLoadingSlot.value ? renderSlot(_ctx.$slots, "loading", { key: 0 }) : (openBlock(), createBlock(Loading, { key: 1 }))
             ])
           ])) : createCommentVNode("", true),
           !unref(pageItems).length && !unref(loading) ? (openBlock(), createElementBlock("div", _hoisted_15, [
             renderSlot(_ctx.$slots, "empty-message", {}, () => [
               createTextVNode(toDisplayString(_ctx.emptyMessage), 1)
-            ], true)
+            ])
           ])) : createCommentVNode("", true)
         ], 2),
         !_ctx.hideFooter ? (openBlock(), createElementBlock("div", _hoisted_16, [
@@ -1733,7 +1731,7 @@ const _sfc_main = defineComponent({
             maxPaginationNumber: unref(maxPaginationNumber),
             nextPage: unref(nextPage),
             prevPage: unref(prevPage)
-          })), void 0, true) : (openBlock(), createBlock(PaginationArrows, {
+          }))) : (openBlock(), createBlock(PaginationArrows, {
             key: 2,
             "is-first-page": unref(isFirstPage),
             "is-last-page": unref(isLastPage),
@@ -1757,8 +1755,7 @@ const _sfc_main = defineComponent({
     };
   }
 });
-var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-1485792e"]]);
 if (typeof window !== "undefined" && window.Vue) {
-  window.Vue.createApp({}).component("Vue3EasyDataTable", DataTable);
+  window.Vue.createApp({}).component("Vue3EasyDataTable", _sfc_main);
 }
-export { DataTable as default };
+export { _sfc_main as default };

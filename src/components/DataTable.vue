@@ -299,6 +299,7 @@
 
       <div
         v-if="!pageItems.length && !loading"
+        class="empty-message"
       >
         <slot name="empty-message">
           {{ emptyMessage }}
@@ -757,13 +758,9 @@ defineExpose({
   }
 </style>
 
-<style lang="scss" scoped>
-@import '../scss/vue3-easy-data-table.scss';
-
-.vue3-easy-data-table__main {
-  min-height: v-bind(tableMinHeightPx);
-}
-.vue3-easy-data-table__main.fixed-height {
-  height: v-bind(tableHeightPx);
-}
+<style lang="scss">
+  .empty-message {
+    text-align: center;
+    padding: 11px 0;
+  }
 </style>
