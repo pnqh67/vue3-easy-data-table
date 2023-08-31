@@ -14,7 +14,7 @@
         'border-cell': borderCell,
       }"
     >
-      <table :id="tableNodeId">
+      <table :id="tableNodeId" class="cmn_tbl tbl_view">
         <colgroup>
           <col
             v-for="(header, index) in headersForRender"
@@ -141,6 +141,7 @@
                 :class="[{
                   'shadow': column === lastFixedColumn,
                   'can-expand': column === 'expand',
+                  'col_check': column === 'checkbox'
                 // eslint-disable-next-line max-len
                 }, typeof bodyItemClassName === 'string' ? bodyItemClassName : bodyItemClassName(column, index + 1), getClassname(column)]"
                 @click="column === 'expand' ? updateExpandingItemIndexList(index + prevPageEndIndex, item, $event) : null"

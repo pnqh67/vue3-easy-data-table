@@ -1,16 +1,7 @@
-import { defineComponent, useCssVars, unref, computed, inject, openBlock, createElementBlock, withModifiers, createElementVNode, normalizeClass, pushScopeId, popScopeId, ref, watch, onMounted, onBeforeUnmount, toDisplayString, Fragment, renderList, useSlots, renderSlot, createCommentVNode, toRefs, provide, normalizeStyle, createBlock, normalizeProps, mergeProps, guardReactiveProps, createTextVNode, createVNode, isRef, createSlots, withCtx } from "vue";
-var MultipleSelectCheckBox_vue_vue_type_style_index_0_scoped_true_lang = "";
-var _export_sfc = (sfc, props) => {
-  const target = sfc.__vccOpts || sfc;
-  for (const [key, val] of props) {
-    target[key] = val;
-  }
-  return target;
-};
-const _withScopeId$5 = (n) => (pushScopeId("data-v-e0a0b7f0"), n = n(), popScopeId(), n);
+import { defineComponent, computed, inject, openBlock, createElementBlock, withModifiers, createElementVNode, normalizeClass, unref, useCssVars, ref, watch, onMounted, onBeforeUnmount, toDisplayString, Fragment, renderList, pushScopeId, popScopeId, useSlots, renderSlot, createCommentVNode, toRefs, provide, normalizeStyle, createBlock, normalizeProps, mergeProps, guardReactiveProps, createTextVNode, createVNode, isRef, createSlots, withCtx } from "vue";
 const _hoisted_1$7 = ["onClick"];
-const _hoisted_2$6 = ["checked"];
-const _hoisted_3$4 = /* @__PURE__ */ _withScopeId$5(() => /* @__PURE__ */ createElementVNode("label", { for: "checbox" }, null, -1));
+const _hoisted_2$5 = ["checked"];
+const _hoisted_3$4 = /* @__PURE__ */ createElementVNode("label", { for: "checbox" }, null, -1);
 const _sfc_main$7 = defineComponent({
   __name: "MultipleSelectCheckBox",
   props: {
@@ -19,34 +10,27 @@ const _sfc_main$7 = defineComponent({
   emits: ["change"],
   setup(__props, { emit: emits }) {
     const props = __props;
-    useCssVars((_ctx) => ({
-      "51ab8a49": unref(themeColor)
-    }));
     const isChecked = computed(() => props.status === "allSelected");
     const toggleChecked = () => {
       emits("change", !isChecked.value);
     };
-    const themeColor = inject("themeColor");
+    inject("themeColor");
     return (_ctx, _cache) => {
       return openBlock(), createElementBlock("div", {
-        class: "easy-checkbox",
         onClick: withModifiers(toggleChecked, ["stop", "prevent"])
       }, [
         createElementVNode("input", {
           type: "checkbox",
+          name: "checkbox",
           checked: isChecked.value,
           class: normalizeClass(__props.status)
-        }, null, 10, _hoisted_2$6),
+        }, null, 10, _hoisted_2$5),
         _hoisted_3$4
       ], 8, _hoisted_1$7);
     };
   }
 });
-var MultipleSelectCheckBox = /* @__PURE__ */ _export_sfc(_sfc_main$7, [["__scopeId", "data-v-e0a0b7f0"]]);
-var SingleSelectCheckBox_vue_vue_type_style_index_0_scoped_true_lang = "";
-const _withScopeId$4 = (n) => (pushScopeId("data-v-7e69a276"), n = n(), popScopeId(), n);
-const _hoisted_1$6 = ["checked"];
-const _hoisted_2$5 = /* @__PURE__ */ _withScopeId$4(() => /* @__PURE__ */ createElementVNode("label", { for: "checbox" }, null, -1));
+const _hoisted_1$6 = ["id", "name", "checked"];
 const _sfc_main$6 = defineComponent({
   __name: "SingleSelectCheckBox",
   props: {
@@ -54,26 +38,27 @@ const _sfc_main$6 = defineComponent({
   },
   emits: ["change"],
   setup(__props, { emit: emits }) {
-    useCssVars((_ctx) => ({
-      "fdaf7e9e": unref(themeColor)
-    }));
-    const themeColor = inject("themeColor");
+    inject("themeColor");
+    const id = (Math.random() + 1).toString(36).substring(7);
     return (_ctx, _cache) => {
-      return openBlock(), createElementBlock("div", {
-        class: "easy-checkbox",
-        onClick: _cache[0] || (_cache[0] = withModifiers(($event) => emits("change"), ["stop", "prevent"]))
-      }, [
-        createElementVNode("input", {
-          type: "checkbox",
-          checked: __props.checked
-        }, null, 8, _hoisted_1$6),
-        _hoisted_2$5
-      ]);
+      return openBlock(), createElementBlock("input", {
+        id: unref(id),
+        type: "checkbox",
+        name: unref(id),
+        checked: __props.checked,
+        onChange: _cache[0] || (_cache[0] = ($event) => emits("change"))
+      }, null, 40, _hoisted_1$6);
     };
   }
 });
-var SingleSelectCheckBox = /* @__PURE__ */ _export_sfc(_sfc_main$6, [["__scopeId", "data-v-7e69a276"]]);
 var RowsSelector_vue_vue_type_style_index_0_scoped_true_lang = "";
+var _export_sfc = (sfc, props) => {
+  const target = sfc.__vccOpts || sfc;
+  for (const [key, val] of props) {
+    target[key] = val;
+  }
+  return target;
+};
 const _withScopeId$3 = (n) => (pushScopeId("data-v-4ca5de3a"), n = n(), popScopeId(), n);
 const _hoisted_1$5 = { class: "easy-data-table__rows-selector" };
 const _hoisted_2$4 = { class: "rows-input" };
@@ -1200,7 +1185,7 @@ var propsWithDefault = {
 };
 var DataTable_vue_vue_type_style_index_0_lang = "";
 var DataTable_vue_vue_type_style_index_1_scoped_true_lang = "";
-const _withScopeId = (n) => (pushScopeId("data-v-5d28e6e7"), n = n(), popScopeId(), n);
+const _withScopeId = (n) => (pushScopeId("data-v-1485792e"), n = n(), popScopeId(), n);
 const _hoisted_1 = ["id"];
 const _hoisted_2 = ["onClick"];
 const _hoisted_3 = {
@@ -1264,8 +1249,8 @@ const _sfc_main = defineComponent({
   setup(__props, { expose: __expose, emit: emits }) {
     const props = __props;
     useCssVars((_ctx) => ({
-      "bdfd3a7e": tableMinHeightPx.value,
-      "076d48cf": tableHeightPx.value
+      "2f333b04": tableMinHeightPx.value,
+      "7f64ab9c": tableHeightPx.value
     }));
     const {
       tableNodeId,
@@ -1542,7 +1527,10 @@ const _sfc_main = defineComponent({
             "border-cell": _ctx.borderCell
           })
         }, [
-          createElementVNode("table", { id: unref(tableNodeId) }, [
+          createElementVNode("table", {
+            id: unref(tableNodeId),
+            class: "cmn_tbl tbl_view"
+          }, [
             createElementVNode("colgroup", null, [
               (openBlock(true), createElementBlock(Fragment, null, renderList(unref(headersForRender), (header, index) => {
                 return openBlock(), createElementBlock("col", {
@@ -1569,7 +1557,7 @@ const _sfc_main = defineComponent({
                     style: normalizeStyle(getFixedDistance(header.value)),
                     onClick: withModifiers(($event) => header.sortable && header.sortType ? unref(updateSortField)(header.value, header.sortType) : null, ["stop"])
                   }, [
-                    header.text === "checkbox" ? (openBlock(), createBlock(MultipleSelectCheckBox, {
+                    header.text === "checkbox" ? (openBlock(), createBlock(_sfc_main$7, {
                       key: unref(multipleSelectStatus),
                       status: unref(multipleSelectStatus),
                       onChange: unref(toggleSelectAll)
@@ -1629,14 +1617,15 @@ const _sfc_main = defineComponent({
                         "data-colname": getColname(column),
                         class: normalizeClass([{
                           "shadow": column === unref(lastFixedColumn),
-                          "can-expand": column === "expand"
+                          "can-expand": column === "expand",
+                          "col_check": column === "checkbox"
                         }, typeof _ctx.bodyItemClassName === "string" ? _ctx.bodyItemClassName : _ctx.bodyItemClassName(column, index + 1), getClassname(column)]),
                         onClick: ($event) => column === "expand" ? unref(updateExpandingItemIndexList)(index + prevPageEndIndex.value, item, $event) : null
                       }, [
                         unref(slots)[`item-${column}`] ? renderSlot(_ctx.$slots, `item-${column}`, normalizeProps(mergeProps({ key: 0 }, item)), void 0, true) : unref(slots)[`item-${column.toLowerCase()}`] ? renderSlot(_ctx.$slots, `item-${column.toLowerCase()}`, normalizeProps(mergeProps({ key: 1 }, item)), void 0, true) : column === "expand" ? (openBlock(), createElementBlock("i", {
                           key: 2,
                           class: normalizeClass(["expand-icon", { "expanding": unref(expandingItemIndexList).includes(prevPageEndIndex.value + index) }])
-                        }, null, 2)) : column === "checkbox" ? (openBlock(), createBlock(SingleSelectCheckBox, {
+                        }, null, 2)) : column === "checkbox" ? (openBlock(), createBlock(_sfc_main$6, {
                           key: 3,
                           checked: item[column],
                           onChange: ($event) => unref(toggleSelectItem)(item)
@@ -1695,7 +1684,7 @@ const _sfc_main = defineComponent({
                     style: normalizeStyle(getFixedDistance(header.value)),
                     onClick: withModifiers(($event) => header.sortable && header.sortType ? unref(updateSortField)(header.value, header.sortType) : null, ["stop"])
                   }, [
-                    header.text === "checkbox" ? (openBlock(), createBlock(MultipleSelectCheckBox, {
+                    header.text === "checkbox" ? (openBlock(), createBlock(_sfc_main$7, {
                       key: unref(multipleSelectStatus),
                       status: unref(multipleSelectStatus),
                       onChange: unref(toggleSelectAll)
@@ -1768,7 +1757,7 @@ const _sfc_main = defineComponent({
     };
   }
 });
-var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-5d28e6e7"]]);
+var DataTable = /* @__PURE__ */ _export_sfc(_sfc_main, [["__scopeId", "data-v-1485792e"]]);
 if (typeof window !== "undefined" && window.Vue) {
   window.Vue.createApp({}).component("Vue3EasyDataTable", DataTable);
 }

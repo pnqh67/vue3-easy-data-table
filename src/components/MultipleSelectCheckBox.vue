@@ -1,10 +1,10 @@
 <template>
   <div
-    class="easy-checkbox"
     @click.stop.prevent="toggleChecked"
   >
     <input
       type="checkbox"
+      name="checkbox"
       :checked="isChecked"
       :class="status"
     >
@@ -31,17 +31,4 @@ const themeColor = inject('themeColor');
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/checbox.scss';
-
-$checkbox-checked-color: v-bind(themeColor);
-
-.easy-checkbox {
-  input[type="checkbox"] {
-    &.allSelected, &.partSelected {
-      + label:before{
-        background: $checkbox-checked-color;
-      }
-    }
-  }
-}
 </style>

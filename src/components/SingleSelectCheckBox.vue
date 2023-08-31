@@ -1,14 +1,11 @@
 <template>
-  <div
-    class="easy-checkbox"
-    @click.stop.prevent="emits('change')"
+  <input
+    :id="id"
+    type="checkbox"
+    :name="id"
+    :checked="checked"
+    @change="emits('change')"
   >
-    <input
-      type="checkbox"
-      :checked="checked"
-    >
-    <label for="checbox" />
-  </div>
 </template>
 
 <script setup lang="ts">
@@ -21,20 +18,9 @@ defineProps({
 });
 
 const themeColor = inject('themeColor');
+
+const id = (Math.random() + 1).toString(36).substring(7)
 </script>
 
 <style lang="scss" scoped>
-@import '../scss/checbox.scss';
-
-$checkbox-checked-color: v-bind(themeColor);
-
-.easy-checkbox {
-  input[type="checkbox"] {
-    &:checked {
-      + label:before{
-        background: $checkbox-checked-color;
-      }
-    }
-  }
-}
 </style>
